@@ -20,3 +20,11 @@ const closeModal = function (trigger) {
 };
 closeModal(overlay);
 closeModal(btnCloseModal);
+
+// Hide modal on pressing escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+  }
+});
